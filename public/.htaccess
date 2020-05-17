@@ -1,0 +1,12 @@
+Options -MultiViews
+# Hide the contents of directories
+#IndexIgnore *
+RewriteEngine On    # Turn on the rewriting engine
+#RewriteRule    ^Joseph    index.php?user=joseph    [NC,L] 
+#RewriteBase /mvc/public
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.*)$ index.php?$1 [L,QSA]
